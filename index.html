@@ -1,0 +1,359 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CVExpress</title>
+
+<!-- CSS de Bootstrap -->
+<link href="https://bootswatch.com/cerulean/bootstrap.min.css"
+	rel="stylesheet" media="screen">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script
+	src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js></script>
+
+
+
+<style media="screen" type="text/css">
+.table-fixed thead {
+	width: 97%;
+}
+
+.table-fixed tbody {
+	height: 230px;
+	overflow-y: auto;
+	width: 100%;
+}
+
+.table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td,
+	.table-fixed th {
+	display: block;
+}
+
+.table-fixed tbody td, .table-fixed thead>tr>th {
+	float: left;
+	border-bottom-width: 0;
+}
+</style>
+
+
+
+
+</head>
+<body>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<!-- El logotipo y el icono que despliega el menÃº se agrupan
+         para mostrarlos mejor en los dispositivos mÃ³viles -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target=".navbar-ex1-collapse">
+				<span class="sr-only">Desplegar navegaciÃ³n</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#"><img src="logo.png"
+				height="70px" width="auto" BORDER=0 hspace=0> </a>
+		</div>
+
+		<!-- Agrupar los enlaces de navegaciÃ³n, los formularios y cualquier
+         otro elemento que se pueda ocultar al minimizar la barra -->
+		<div class="collapse navbar-collapse navbar-ex1-collapse">
+			<ul class="nav navbar-nav">
+
+
+			</ul>
+
+
+
+			<ul class="nav navbar-nav navbar-right">
+
+				<li class="dropdown btn-lg"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown"> AÃ±adir alerta<b class="caret"></b>
+				</a>
+
+					<ul class="dropdown-menu">
+						<div class="panel panel-info">
+							<div class="panel-heading">
+								<h3 class="panel-title">Añadir alerta</h3>
+							</div>
+							<div class="panel-body">
+								<form role="form" METHOD=POST action="logica">
+									<input type="hidden" name="usuario" value="lucas">
+
+									<div class="form-group">
+										<label for="ejemplo_password_1">Vendedor</label> <input
+											class="form-control" id="Vendedor" placeholder="ej: Cisco">
+									</div>
+									<div class="form-group">
+										<label for="ejemplo_password_1">Producto</label> <input
+											class="form-control" id="Vendedor" placeholder="ej: Fx50">
+									</div>
+									<div class="form-group">
+										<label for="ejemplo_password_1">VersiÃ³n</label> <input
+											class="form-control" id="Vendedor" placeholder="ej: 2.5.1">
+									</div>
+
+
+
+
+
+									<button type="submit" class="btn btn-warning btn-block">AÃ±adir
+									</button>
+								</form>
+
+
+							</div>
+						</div>
+
+					</ul></li>
+				<li class="dropdown btn-lg"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown"> Modificar Peridodo<b class="caret"></b>
+				</a>
+
+					<ul class="dropdown-menu">
+
+						<div class="panel panel-success">
+							<div class="panel-heading">
+								<h3 class="panel-title">M;odificar</h3>
+							</div>
+							<div class="panel-body">
+								<form role="form" METHOD=POST action="logica">
+									<input type="hidden" name="usuario" value="lucas">
+
+									<div class="form-group">
+										<label for="ejemplo_password_1">Tiempo</label> <input
+											class="form-control" id="Vendedor" type="number" min="0"
+											placeholder="ej: 20 ">
+
+									</div>
+									<div class="form-group">
+										<label for="ejemplo_password_1">Unidades</label> <select
+											class="form-control">
+											<option>horas</option>
+											<option>dias</option>
+											<option>semanas</option>
+
+										</select>
+									</div>
+									<button type="submit" class="btn btn-warning btn-block">Modificar
+									</button>
+								</form>
+
+
+							</div>
+						</div>
+					</ul></li>
+			</ul>
+		</div>
+	</nav>
+
+
+	<div class="jumbotron">
+		<div class="container">
+
+
+			<div class="container">
+				<div class="row">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4>Fixed Header Scrolling Table</h4>
+						</div>
+						<table class="table table-fixed">
+							<thead>
+								<tr>
+									<th class="col-xs-2">CVE</th>
+									<th class="col-xs-3">Fecha</th>
+									<th class="col-xs-2">Score</th>
+									<th class="col-xs-1"></th>
+									<th class="col-xs-3"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="col-xs-2">CVE-2016-8296</td>
+									<td class="col-xs-3">2016-11-24T09:05:30Z</td>
+									<td class="col-xs-2">9.6</td>
+									<td class="col-xs-1"><a type="button" href="#"
+										class="btn btn-success"><span
+											class="	glyphicon glyphicon-eye-open"></span></a></td>
+									<td class="col-xs-3"><a type="button" href="#"
+										class="btn btn-info"><span
+											class="	glyphicon glyphicon-share"></span></a></td>
+								</tr>
+								<tr>
+									<td class="col-xs-2">CVE-2016-8296</td>
+									<td class="col-xs-3">2016-11-24T09:05:30Z</td>
+									<td class="col-xs-2">9.6</td>
+									<td class="col-xs-1"><a type="button" href="#"
+										class="btn btn-success"><span
+											class="	glyphicon glyphicon-eye-open"></span></a></td>
+									<td class="col-xs-3"><a type="button" href="#"
+										class="btn btn-info"><span
+											class="	glyphicon glyphicon-share"></span></a></td>
+								</tr>
+								<tr>
+									<td class="col-xs-2">CVE-2016-8296</td>
+									<td class="col-xs-3">2016-11-24T09:05:30Z</td>
+									<td class="col-xs-2">9.6</td>
+									<td class="col-xs-1"><a type="button" href="#"
+										class="btn btn-success"><span
+											class="	glyphicon glyphicon-eye-open"></span></a></td>
+									<td class="col-xs-3"><a type="button" href="#"
+										class="btn btn-info"><span
+											class="	glyphicon glyphicon-share"></span></a></td>
+								</tr>
+								<tr>
+									<td class="col-xs-2">CVE-2016-8296</td>
+									<td class="col-xs-3">2016-11-24T09:05:30Z</td>
+									<td class="col-xs-2">9.6</td>
+									<td class="col-xs-1"><a type="button" href="#"
+										class="btn btn-success"><span
+											class="	glyphicon glyphicon-eye-open"></span></a></td>
+									<td class="col-xs-3"><a type="button" href="#"
+										class="btn btn-info"><span
+											class="	glyphicon glyphicon-share"></span></a></td>
+								</tr>
+								<tr>
+									<td class="col-xs-2">CVE-2016-8296</td>
+									<td class="col-xs-3">2016-11-24T09:05:30Z</td>
+									<td class="col-xs-2">9.6</td>
+									<td class="col-xs-1"><a type="button" href="#"
+										class="btn btn-success"><span
+											class="	glyphicon glyphicon-eye-open"></span></a></td>
+									<td class="col-xs-3"><a type="button" href="#"
+										class="btn btn-info"><span
+											class="	glyphicon glyphicon-share"></span></a></td>
+								</tr>
+								<tr>
+									<td class="col-xs-2">CVE-2016-8296</td>
+									<td class="col-xs-3">2016-11-24T09:05:30Z</td>
+									<td class="col-xs-2">9.6</td>
+									<td class="col-xs-1"><a type="button" href="#"
+										class="btn btn-success"><span
+											class="	glyphicon glyphicon-eye-open"></span></a></td>
+									<td class="col-xs-3"><a type="button" href="#"
+										class="btn btn-info"><span
+											class="	glyphicon glyphicon-share"></span></a></td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+
+
+
+		</div>
+	</div>
+
+	<div class="container">
+
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th></th>
+					<th>Vendedor</th>
+					<th>Producto</th>
+					<th>VersiÃ³n</th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><a type="button" href="#" class="btn btn-info"><span
+							class="	glyphicon glyphicon-search"></span></a></td>
+					<td>Cisco</td>
+					<td>Fx50</td>
+					<td>2.5.1</td>
+					<td><a type="button" href="#" class="btn btn-warning"><span
+							class="	glyphicon glyphicon-pencil"></span></a></td>
+
+					<td><form role="form" METHOD=POST action="eliminar">
+							<input type="hidden" name="cÃ³digo" value="cualquier">
+							<button type="submit" class="btn btn-danger ">
+								<span class="glyphicon glyphicon-remove-sign"></span>
+							</button>
+						</form>
+				</tr>
+				<tr>
+					<td><a type="button" href="#" class="btn btn-info"><span
+							class="	glyphicon glyphicon-search"></span></a></td>
+					<td>Cisco</td>
+					<td>Fx50</td>
+					<td>2.5.2</td>
+					<td><a type="button" href="#" class="btn btn-warning"><span
+							class="	glyphicon glyphicon-pencil"></span></a></td>
+					<td><form role="form" METHOD=POST action="eliminar">
+							<input type="hidden" name="cÃ³digo" value="cualquier">
+							<button type="submit" class="btn btn-danger ">
+								<span class="glyphicon glyphicon-remove-sign"></span>
+							</button>
+						</form>
+				</tr>
+				<tr>
+					<td><a type="button" href="#" class="btn btn-info"><span
+							class="	glyphicon glyphicon-search"></span></a></td>
+					<td>Apache</td>
+					<td>Tomcat</td>
+					<td>9.1</td>
+					<td><a type="button" href="#" class="btn btn-warning"><span
+							class="	glyphicon glyphicon-pencil"></span></a></td>
+					<td><form role="form" METHOD=POST action="eliminar">
+							<input type="hidden" name="cÃ³digo" value="cualquier">
+							<button type="submit" class="btn btn-danger ">
+								<span class="glyphicon glyphicon-remove-sign"></span>
+							</button>
+						</form>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+
+
+	<footer>
+		<hr>
+		<p>&copy; Satec 2016</p>
+	</footer>
+
+
+
+
+</body>
+</html>
+
